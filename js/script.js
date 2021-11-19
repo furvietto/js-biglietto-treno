@@ -10,18 +10,16 @@ let ticket = km * 0.21;
 console.log("somma ticket " + ticket);
 
 let minorenni = ((ticket * 20) / 100);
-let maggiorenni = ((ticket * 40) / 100);
-let prezzoMin = ticket - minorenni;
-let prezzoMag = ticket - maggiorenni;
+let maggiorenni =((ticket * 40) / 100);
 
 // va applicato uno sconto del 20% per i minorenni
 // va applicato uno sconto del 40% per gli over 65.
 // L’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 
 if (age < 18) {
-    document.getElementById("divo").innerHTML = "il prezzo da pagare è di " + prezzoMin.toFixed(2);
+    document.getElementById("divo").innerHTML = "il prezzo da pagare è di " + (ticket - minorenni).toFixed(2);
 } else if (age > 65) {
-    document.getElementById("divo").innerHTML = "il prezzo da pagare è di " + prezzoMag.toFixed(2);
+    document.getElementById("divo").innerHTML = "il prezzo da pagare è di " + (ticket - maggiorenni).toFixed(2);
 } else {
     document.getElementById("divo").innerHTML = "il prezzo da pagare è di " + ticket.toFixed(2);
 }
